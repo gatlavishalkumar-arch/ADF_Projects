@@ -39,3 +39,27 @@ ready for downstream transformation and analytics.
 ## 🔁 Pipeline Flow
 
 <img width="1434" height="792" alt="image" src="https://github.com/user-attachments/assets/96b837bf-6b0f-43c5-85d5-1ae5d338da34" />
+
+
+
+## 🔄 Pipeline 2 — Silver to Gold Layer (ADF Mapping Data Flow)
+
+**Pipeline Name:** `Postgre_SilverLake_GoldLake`
+**Data Flow Status:** ✅ Success
+**Cluster Startup Time:** 1s 484ms
+**Number of Transformations:** 4
+
+---
+
+### 🔁 Data Flow Steps
+
+<img src="./screenshots/postgre_silverlake_goldlake_dataflow.png" width="800"/>
+
+
+
+
+
+
+
+
+
