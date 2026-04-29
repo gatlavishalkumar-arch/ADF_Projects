@@ -38,7 +38,7 @@ covering two complete end-to-end data engineering workflows using
 | **Start Time**       | 4/28/2026, 4:27:09 PM        |
 
 ### 🖼️ Pipeline 1 Screenshot
-![MySQL to ADLS Gen2](./screenshots/MySQL_ADLS_Silver.jpg)
+<img width="1441" height="815" alt="MySQL_ADLS_Silver" src="https://github.com/user-attachments/assets/205688a8-b5e7-46ea-91a8-83117585f231" />
 
 ---
 
@@ -61,7 +61,7 @@ covering two complete end-to-end data engineering workflows using
 | `sinkMysqlSQLDB`     | Sink            | Write cleansed data to SQL Database |
 
 ### 🖼️ Pipeline 2 Screenshot
-![MySQL Silver Gold Data Flow](./screenshots/MySQL_ADLS_Silver_Transform_ADLSGold.jpg)
+<img width="1520" height="402" alt="MySQL_ADLS_Silver_Transform_ADLSGold" src="https://github.com/user-attachments/assets/87f5602f-a710-472a-9abb-54edf9e27f47" />
 
 ---
 
@@ -84,7 +84,7 @@ covering two complete end-to-end data engineering workflows using
 | **Start Time**        | 4/28/2026, 4:36:23 PM        |
 
 ### 🖼️ Pipeline 3 Screenshot
-![ADLS Gen2 to Azure SQL](./screenshots/MySQL_ADLSGold_AzureSQL.jpg)
+<img width="1452" height="861" alt="MySQL_ADLSGold_AzureSQL" src="https://github.com/user-attachments/assets/73318858-06ef-4ec6-8113-0c632f57b9c6" />
 
 ---
 
@@ -123,7 +123,7 @@ covering two complete end-to-end data engineering workflows using
 | **Start Time**        | 4/28/2026, 12:34:17 PM         |
 
 ### 🖼️ Pipeline 1 Screenshot
-![PostgreSQL to ADLS Gen2](./screenshots/Postgre_ADLS.jpg)
+<img width="1506" height="881" alt="Postgre_ADLS_Silver" src="https://github.com/user-attachments/assets/140222d7-d7a2-4d62-acdf-9fddc5ae44b8" />
 
 ---
 
@@ -145,7 +145,7 @@ covering two complete end-to-end data engineering workflows using
 | `sinkToGold`       | Sink            | Load clean data to Gold Layer              |
 
 ### 🖼️ Pipeline 2 Screenshot
-![Postgre SilverLake GoldLake](./screenshots/Postgre_SilverLake_GoldLake.jpg)
+<img width="1443" height="403" alt="Postgre_SilverLake_GoldLake" src="https://github.com/user-attachments/assets/3baf9fc4-e5b9-427b-a09f-cb7f008fe48d" />
 
 ---
 
@@ -168,7 +168,7 @@ covering two complete end-to-end data engineering workflows using
 | **Start Time**        | 4/28/2026, 4:24:07 PM        |
 
 ### 🖼️ Pipeline 3 Screenshot
-![PG Gold to Azure SQL](./screenshots/PGGold_AzureSQL.jpg)
+<img width="1457" height="876" alt="PGGold_AzureSQL" src="https://github.com/user-attachments/assets/10f45927-96ee-4149-966f-a361bd0e6438" />
 
 ---
 
