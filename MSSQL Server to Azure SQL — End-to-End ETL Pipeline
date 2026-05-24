@@ -1,0 +1,134 @@
+# 🗄️ MSSQL Server to Azure SQL — End-to-End ETL Pipeline
+
+A production-ready **End-to-End Data Engineering Pipeline** built with
+**Azure Data Factory** that extracts data from **On-Premises SQL Server**,
+transforms it through **Medallion Architecture** layers, and loads it
+into **Azure SQL Database**.
+
+---
+
+## 🏗️ Complete Architecture Flow
+---
+
+## 📌 Pipeline 1 — On-Prem SQL Server to ADLS Gen2 (Ingestion)
+
+| Property              | Value                          |
+|-----------------------|--------------------------------|
+| **Source**            | SQL Server (On-Premises)       |
+| **Sink**              | Azure Data Lake Storage Gen2   |
+| **Region**            | East Asia                      |
+| **Status**            | ✅ Succeeded                   |
+| **Rows Read**         | 100                            |
+| **Rows Written**      | 100                            |
+| **Files Written**     | 1                              |
+| **Data Read**         | 19.062 KB                      |
+| **Data Written**      | 26.842 KB                      |
+| **Copy Duration**     | 15 seconds                     |
+| **Throughput**        | 6.354 KB/s                     |
+| **Parallel Copies**   | 1                              |
+| **Start Time**        | 4/29/2026, 2:48:04 PM          |
+
+### 🖼️ Pipeline 1 Screenshot
+
+<img width="1497" height="868" alt="Image" src="https://github.com/user-attachments/assets/27555f3e-086e-42f4-b0e8-25551aae85de" />
+---
+
+## 📌 Pipeline 2 — Silver_DataFlow_Gold (ADF Mapping Data Flow)
+
+**Pipeline:** `Silver_DataFlow_Gold`
+**Data Flow Status:** ✅ Success
+**Cluster Startup Time:** 1s 379ms
+**Number of Transformations:** 5
+
+### 🔁 Data Flow Steps
+### ⚙️ Transformation Details
+
+| Step              | Type            | Purpose                                      |
+|-------------------|-----------------|----------------------------------------------|
+| `ADLSSilverGold`  | Source          | Read data from ADLS Gen2 Silver Layer        |
+| `EditDates`       | Derived Column  | Standardize date formats for analytics       |
+| `PurchaseColumn`  | Derived Column  | Apply business rules on purchase columns     |
+| `select1`         | Select          | Filter & select required columns only        |
+| `sinkADLSGold`    | Sink            | Load clean data to ADLS Gen2 Gold Layer      |
+
+### 🖼️ Pipeline 2 Screenshot
+
+<img width="1535" height="411" alt="Image" src="https://github.com/user-attachments/assets/a276998a-26f4-47a5-85cd-e455b516d98b" />
+
+
+---
+
+## 📌 Pipeline 3 — ADLS Gen2 Gold to Azure SQL Database (Final Load)
+
+| Property              | Value                        |
+|-----------------------|------------------------------|
+| **Source**            | Azure Data Lake Storage Gen2 |
+| **Sink**              | Azure SQL Database           |
+| **Region**            | East Asia                    |
+| **Status**            | ✅ Succeeded                 |
+| **Files Read**        | 1                            |
+| **Rows Read**         | 100                          |
+| **Rows Written**      | 100                          |
+| **Data Read**         | 28.533 KB                    |
+| **Data Written**      | 21.662 KB                    |
+| **Copy Duration**     | 13 seconds                   |
+| **Throughput**        | 7.133 KB/s                   |
+| **DIUs Used**         | 4                            |
+| **Parallel Copies**   | 1                            |
+| **Start Time**        | 4/29/2026, 3:49:29 PM        |
+
+### 🖼️ Pipeline 3 Screenshot
+
+<img width="1455" height="865" alt="Image" src="https://github.com/user-attachments/assets/888d0fd2-130e-45c4-98f7-818d1d101cf9" />
+---
+
+## 🏆 Pipeline Summary
+
+| Pipeline | Source                | Sink                  | Rows | Duration | Status |
+|----------|-----------------------|-----------------------|------|----------|--------|
+| 1        | SQL Server (On-Prem)  | ADLS Gen2 (Silver)    | 100  | 15 sec   | ✅     |
+| 2        | ADLS Gen2 (Silver)    | ADLS Gen2 (Gold)      | 100  | 1s 379ms | ✅     |
+| 3        | ADLS Gen2 (Gold)      | Azure SQL Database    | 100  | 13 sec   | ✅     |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Azure Data Factory** — Pipeline orchestration & monitoring
+- **SQL Server (On-Premises)** — Relational source database
+- **Self-Hosted Integration Runtime** — On-Prem to Cloud connectivity
+- **Azure Data Lake Storage Gen2** — Silver & Gold layer storage
+- **ADF Mapping Data Flow** — Visual ETL transformation engine
+- **Azure SQL Database** — Final Gold layer destination
+- **Azure Copy Activity** — Efficient data movement
+- **Medallion Architecture** — Bronze → Silver → Gold pattern
+
+---
+
+## 📊 What This Demonstrates
+
+- ✅ **On-Premises to Cloud** data migration using Self-Hosted IR
+- ✅ **Medallion Architecture** (Silver → Gold)
+- ✅ **ADF Mapping Data Flow** with 5 transformations
+- ✅ **Date formatting & column selection** logic
+- ✅ **Business rule application** on purchase columns
+- ✅ Real-world **pipeline execution metrics**
+- ✅ Zero data loss — 100 rows in = 100 rows out
+- ✅ Fast cluster startup — **1s 379ms** ⚡
+
+---
+
+## 🔑 Key Highlight — Self-Hosted Integration Runtime
+> Self-Hosted IR installed on local machine enables
+> secure data movement from On-Premises SQL Server
+> to Azure Cloud without exposing the database publicly.
+
+---
+
+## 📁 Repository Structure
+---
+
+## 👨‍💻 Author
+
+**Vishal Kumar Gatla**
+Data Engineer | Azure Data Factory | SQL Server | Medallion Architecture
